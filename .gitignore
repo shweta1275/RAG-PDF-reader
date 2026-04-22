@@ -1,0 +1,13 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+.vscode/
+
+# Local documents and generated assets
+Documents/
+*.pdf
+
+# Temporary and editor files
+tempCodeRunnerFile.py
