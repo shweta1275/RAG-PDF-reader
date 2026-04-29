@@ -1,4 +1,4 @@
-# PDF Copilot
+# Ledger - Retrieval-Based Document QA System
 
 A Streamlit app for uploading a PDF and chatting with it using local retrieval and an Ollama model.
 
