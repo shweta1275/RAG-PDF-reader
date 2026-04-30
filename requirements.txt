@@ -1,6 +1,9 @@
-streamlit
-langchain
-langchain-community
-faiss-cpu
-sentence-transformers
-pypdf
+streamlit==1.56.0
+fastapi==0.136.1
+uvicorn[standard]==0.46.0
+python-multipart==0.0.27
+langchain==0.1.17
+langchain-community==0.0.36
+faiss-cpu==1.13.2
+sentence-transformers==5.4.1
+pypdf==6.10.2
