@@ -283,7 +283,13 @@ function App() {
           </select>
         </label>
 
-        <Slider label="Chunks to retrieve" min={2} max={8} value={settings.topK} onChange={(value) => updateSetting('topK', value)} />
+        <Slider 
+          label="Chunks to retrieve" 
+          min={2} 
+          max={Math.max(8, state.chunks || 8)} 
+          value={settings.topK} 
+          onChange={(value) => updateSetting('topK', value)} 
+        />
         <Slider label="Chunk size" min={300} max={1500} step={100} value={settings.chunkSize} onChange={(value) => updateSetting('chunkSize', value)} />
         <Slider label="Chunk overlap" min={0} max={300} step={20} value={settings.chunkOverlap} onChange={(value) => updateSetting('chunkOverlap', value)} />
 
@@ -326,6 +332,9 @@ function App() {
           <Stat label="Document" value={state.docName || 'Waiting'} />
           <Stat label="Pages" value={state.pages} />
           <Stat label="Indexed Chunks" value={state.chunks} />
+          {activeTab === 'debug' && showDebug && state.chunks !== chunks.length && (
+            <span style={{color: 'red', fontWeight: 700, fontSize: '1rem'}}>Warning: Indexed chunk count and debug chunk count do not match ({state.chunks} vs {chunks.length})</span>
+          )}
         </section>
 
         <section className="content-grid">
@@ -468,7 +477,7 @@ function LandingPage({ onOpenBasic, onOpenSemrag, onOpenVectorlessRah }) {
             <button className="mode-card floating-card" type="button" onClick={onOpenVectorlessRah}>
               <span className="mode-icon"><Sparkles size={24} /></span>
               <span>
-                <strong>Vectorless RAH</strong>
+                <strong>Vectorless RAG</strong>
                 <small>A vectorless retrieval workspace is coming next.</small>
               </span>
             </button>
@@ -493,7 +502,7 @@ function VectorlessRahPage({ onBack }) {
           <ArrowLeft size={16} />
           Back
         </button>
-        <p className="eyebrow">Vectorless RAH</p>
+        <p className="eyebrow">Vectorless RAG</p>
         <h1>Work in progress.</h1>
         <p>
           This space is reserved for the vectorless retrieval version: alternative chunking, smarter context selection, and a more meaning-aware document brain.

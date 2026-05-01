@@ -16,6 +16,10 @@ Ledger is a local PDF question-answering app. It has a React + Vite frontend, a 
 - Use a sober blue neobrutalist interface with bold borders, hard shadows, and yellow highlights
 - Detect when Ollama is offline and show a clean error instead of a traceback
 
+![Landing page](assets/landing_page.png)
+
+![RAG](assets/RAG.png)
+
 ## Project Structure
 
 ```text
